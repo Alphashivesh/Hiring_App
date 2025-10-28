@@ -2,8 +2,6 @@
 
 🚀 A comprehensive **React-based hiring platform** that enables HR teams to manage jobs, candidates, and assessments with an intuitive, modern interface.  
 
----
-
 ## 🏷️ **Tech Stack & Badges**
 
 <p align="center">
