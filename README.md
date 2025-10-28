@@ -2,6 +2,8 @@
 
 🚀 A comprehensive **React-based hiring platform** that enables HR teams to manage jobs, candidates, and assessments with an intuitive, modern interface.  
 
+---
+
 ## 🏷️ **Tech Stack & Badges**
 
 <p align="center">
@@ -12,8 +14,6 @@
   <img src="https://img.shields.io/badge/Vite-Build Tool-646CFF?logo=vite&logoColor=white" alt="Vite Badge" />
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License Badge" />
 </p>
-
----
 
 ### 🌐 [**Live Demo**](https://hiring-app-ji57.vercel.app/)
 
