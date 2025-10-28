@@ -1,96 +1,94 @@
-## [Live Demo 🌐](https://hiring-app-ji57.vercel.app/)
+# 🌟 **TalentFlow – Mini Hiring Platform**
 
-# TalentFlow - Mini Hiring Platform
+🚀 A comprehensive **React-based hiring platform** that enables HR teams to manage jobs, candidates, and assessments with an intuitive, modern interface.  
 
-A comprehensive React-based hiring platform that enables HR teams to manage jobs, candidates, and assessments with an intuitive interface.
+### 🌐 [**Live Demo**](https://hiring-app-ji57.vercel.app/)
 
-## Live Demo
+---
 
-The application is deployed and ready to use.
+## ✨ **Features Overview**
 
-## Features
+### 🧩 1. **Jobs Board**
+- 🛠️ **CRUD Operations** – Create, edit, and archive jobs  
+- 📜 **Server-like Pagination** – Smooth navigation with paginated results  
+- 🔍 **Advanced Filtering** – Filter by title (search) & status (active/archived)  
+- 🎯 **Drag-and-Drop Reordering** – Reorder jobs with visual feedback + optimistic updates  
+- 🔄 **Rollback on Failure** – Auto-rollback if reordering fails (simulated 8% error rate)  
+- 🔗 **Deep Linking** – Access jobs directly via `/jobs/:jobId` (from assessment builder)  
+- ✅ **Validation** – Title required + unique slug validation  
 
-### 1. Jobs Board
-- **CRUD Operations**: Create, edit, and archive jobs
-- **Server-like Pagination**: Navigate through job listings with paginated results
-- **Advanced Filtering**: Filter jobs by title (search) and status (active/archived)
-- **Drag-and-Drop Reordering**: Reorder jobs with visual feedback and optimistic updates
-- **Rollback on Failure**: Automatic rollback if reordering fails (simulated 8% error rate)
-- **Deep Linking**: Direct access to jobs via `/jobs/:jobId` (via assessment builder)
-- **Validation**: Title and unique slug validation
+---
 
-### 2. Candidates Management
-- **Virtualized List**: Efficient rendering of 1000+ candidates with custom virtualization
-- **Client-side Search**: Real-time search by name or email
-- **Server-like Filtering**: Filter candidates by current stage
-- **Candidate Profile**: Detailed view at `/candidates/:id` with:
-  - Complete status change timeline
-  - Notes section with @mentions support
-  - Stage transition history
-- **Kanban Board**: Drag-and-drop interface for moving candidates between stages
-- **Stage Management**: 6 stages - Applied, Screen, Tech, Offer, Hired, Rejected
+### 👥 2. **Candidates Management**
+- ⚡ **Virtualized List** – Efficiently render 1000+ candidates with smooth scrolling  
+- 🔎 **Client-side Search** – Real-time search by name or email  
+- 🧮 **Server-like Filtering** – Filter candidates by current stage  
+- 🧑‍💼 **Candidate Profile** – Detailed view at `/candidates/:id` featuring:
+  - ⏳ Status change timeline  
+  - 📝 Notes with `@mentions` support  
+  - 🔁 Stage transition history  
+- 🗂️ **Kanban Board** – Drag & drop candidates across 6 stages  
+- 🎯 **Stage Management** – Applied → Screen → Tech → Offer → Hired → Rejected  
 
-### 3. Assessment Builder
-- **Per-Job Assessments**: Create custom assessments for each job
-- **Multiple Question Types**:
-  - Single Choice (radio buttons)
-  - Multiple Choice (checkboxes)
-  - Short Text (with max length validation)
-  - Long Text (textarea with max length)
-  - Numeric (with min/max range validation)
-  - File Upload (UI stub)
-- **Section Organization**: Group questions into logical sections
-- **Live Preview**: Real-time preview of assessment as fillable form
-- **Validation Rules**: Required fields, numeric ranges, max length
-- **Conditional Questions**: Show/hide questions based on previous answers
-- **Persistent State**: Assessments saved to Supabase database
+---
 
-## Technical Architecture
+### 🧠 3. **Assessment Builder**
+- 🧾 **Per-Job Assessments** – Create custom assessments per job  
+- 🔘 **Multiple Question Types**:
+  - Single Choice ✅  
+  - Multiple Choice ☑️  
+  - Short Text ✍️  
+  - Long Text 🧾  
+  - Numeric 🔢  
+  - File Upload 📎 *(UI stub)*  
+- 📚 **Section Organization** – Group questions into logical sections  
+- 👀 **Live Preview** – Real-time preview of assessments  
+- 🧩 **Validation Rules** – Required fields, numeric ranges, max length  
+- 🔄 **Conditional Questions** – Show/hide based on previous answers  
+- 💾 **Persistent State** – Saved directly to **Supabase** database  
 
-### Frontend Stack
-- **React 18** with TypeScript
-- **React Router** for navigation
-- **Tailwind CSS** for styling
-- **Lucide React** for icons
-- **Vite** for build tooling
+---
 
-### Backend & Database
-- **Supabase** (PostgreSQL) for data persistence
-- **Row Level Security (RLS)** enabled on all tables
-- **Real-time data** with optimistic updates
+## ⚙️ **Technical Architecture**
 
-### State Management
-- React hooks (useState, useEffect)
-- Local component state
-- No external state management library needed
+### 💻 **Frontend Stack**
+- ⚛️ React 18 + TypeScript  
+- 🧭 React Router  
+- 🎨 Tailwind CSS  
+- 🪶 Lucide React (icons)  
+- ⚡ Vite for build tooling  
 
-### API Layer
-- Custom API service with simulated network conditions:
-  - Artificial latency: 200-1200ms
-  - 8% error rate on write operations
-  - Automatic error handling and user feedback
+### 🗄️ **Backend & Database**
+- 🧰 **Supabase (PostgreSQL)** for persistence  
+- 🔐 **Row Level Security (RLS)** enabled  
+- 🔴 Real-time data + optimistic updates  
 
-### Database Schema
+### 🧠 **State Management**
+- `useState` / `useEffect` (no external state libs)  
+- Local component state  
 
-**Jobs Table**
-- id, title, slug, status, tags, order, description, timestamps
+### 🌐 **API Layer**
+- Simulated network with:
+  - ⏱️ Latency: 200–1200ms  
+  - ⚠️ 8% error rate  
+  - 💬 Automatic error handling & user feedback  
 
-**Candidates Table**
-- id, name, email, stage, job_id, timestamps
+---
 
-**Candidate Timeline Table**
-- id, candidate_id, from_stage, to_stage, notes, created_at
+## 🧾 **Database Schema**
 
-**Assessments Table**
-- id, job_id, title, sections (JSONB), timestamps
+| Table | Columns |
+|--------|----------|
+| **Jobs** | id, title, slug, status, tags, order, description, timestamps |
+| **Candidates** | id, name, email, stage, job_id, timestamps |
+| **Candidate Timeline** | id, candidate_id, from_stage, to_stage, notes, created_at |
+| **Assessments** | id, job_id, title, sections (JSONB), timestamps |
+| **Assessment Responses** | id, assessment_id, candidate_id, responses (JSONB), submitted_at |
+| **Candidate Notes** | id, candidate_id, content, mentions, created_at |
 
-**Assessment Responses Table**
-- id, assessment_id, candidate_id, responses (JSONB), submitted_at
+---
 
-**Candidate Notes Table**
-- id, candidate_id, content, mentions, created_at
-
-## Setup Instructions
+## 🧰 **Setup Instructions**
 
 1. **Clone the repository**
 ```bash
